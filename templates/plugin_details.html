@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Plugin Details - ChatGPT Plugin Store</title>
+    <!-- Tailwind CSS CDN -->
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.1.2/dist/tailwind.min.css" rel="stylesheet">
+    <!-- Fontawesome CDN -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet">
+    <!-- Additional CSS file -->
+    <link href="styles.css" rel="stylesheet">
+    <!-- Additional JavaScript file -->
+    <script src="script.js" defer=""></script>
+  
+  
+    <!-- Header Section -->
+  <header class="bg-gray-800">
+    <div class="container mx-auto py-4 px-6 flex items-center justify-between">
+      <a href="{{ url_for('index') }}" class="text-white text-2xl font-bold">ChatGPT Plugin Store 🧩</a>
+      <nav class="space-x-4">
+        <a href="{{ url_for('index') }}" class="text-white">Homepage</a>
+        <a href="{{ url_for('plugin_list') }}" class="text-white">Plugins</a>
+        <a href="{{ url_for('contact') }}" class="text-white">Contact</a>
+      </nav>
+    </div>
+  </header>
+  
+  <!-- Event details content 🛠️ -->
+<section class="py-16 bg-gray-100">
+  <div class="container mx-auto">
+    <h2 class="text-3xl font-bold text-center mb-8">Plugin Details of "{{ item['name'] }}" 🧩</h2>
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+      <div class="bg-white rounded-lg shadow-md overflow-hidden">
+        <img src="{{ item['logo_url'] }}" alt="{{ item['name_for_human'] }}" class="w-full h-40 object-cover">
+        <div class="p-4 text-center">
+          <h3 class="text-xl font-semibold mb-2">{{ item['name_for_human'] }}</h3>
+          <p class="text-gray-700 mb-4">{{ item['description_for_human'] }}</p>
+          <a href="{{ item['pluginLink'] }}" class="bg-blue-500 hover:bg-blue-600 text-white font-bold py-2 px-4 rounded-full">Try this plugin! 🚀</a>
+        </div>
+      </div>
+      <div class="bg-white rounded-lg shadow-md overflow-hidden">
+        <div class="p-4">
+          <h3 class="text-xl font-semibold mb-2">{{ item['name'] }}</h3>
+          <p class="text-gray-700 mb-4">{{ item['description_for_model'] }}</p>
+          <ul class="text-gray-500">
+            <li>ID: {{ item['id'] }}</li>
+            <li>Contact: {{ item['contact_email'] }}</li>
+            <li><a href="{{ item['legal_info_url'] }}" class="underline">Legal Info</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Section for displaying fetched JSON 📋 -->
+<section class="py-16 bg-white">
+  <div class="container mx-auto">
+    <h2 class="text-3xl font-bold text-center mb-8">PluginLink JSON Output 🧾</h2>
+    <p class="text-gray-700 text-center mb-4">Click the button below to fetch and display the Plugin JSON response!</p> <!-- Added explanatory paragraph -->
+    <div class="text-center"> 
+      <button id="fetchJsonButton" class="bg-blue-500 hover:bg-blue-600 text-white font-bold py-2 px-4 rounded-full text-center">Fetch JSON 🔄</button>
+    </div>
+    <pre id="jsonOutput" class="bg-gray-100 p-4 rounded-lg"></pre>
+  </div>
+</section>
+
+
+<section class="py-16 bg-gray-100">
+  <div class="flex items-center justify-center h-full">
+    <div class="p-4 text-center">
+      <h3 class="text-xl font-semibold mb-2">Do you want to keep discovering other plugins? 🌟</h3>
+      <p class="text-gray-700 mb-4">Take a step back to the Plugin list page, click below.</p>
+      <a href="{{ url_for('plugin_list') }}" class="bg-blue-500 hover:bg-blue-600 text-white font-bold py-2 px-4 rounded-full">Go back ↩️</a>
+    </div>
+  </div>
+</section>
+
+    
+    <script>
+      document.getElementById("fetchJsonButton").addEventListener("click", async () => {
+        try {
+          const response = await fetch("{{ item['pluginLink'] }}");
+          const jsonData = await response.json();
+          document.getElementById("jsonOutput").textContent = JSON.stringify(jsonData, null, 2);
+        } catch (error) {
+          console.error("Error fetching JSON:", error);
+          document.getElementById("jsonOutput").textContent = "Error fetching JSON. This feature may work on other plugins.";
+        }
+      });
+    </script>
+
+      
+  <!-- Footer Section -->
+  <footer class="bg-gray-800 text-white py-10">
+    <div class="container mx-auto text-center">
+      <p>&copy; 2023 ChatGPT Plugin Store. All rights belong to the open-source community!</p>
+      <p>Made with ❤️</p>
+    </div>
+  </footer>
+  
+  </div></div></div></body>
+  

@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ChatGPT Plugin Store</title>
+  <!-- Tailwind CSS CDN -->
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.1.2/dist/tailwind.min.css" rel="stylesheet">
+  <!-- Fontawesome CDN -->
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet">
+  <!-- Additional CSS file -->
+  <link href="styles.css" rel="stylesheet">
+  <!-- Additional JavaScript file -->
+  <script src="script.js" defer></script>
+</head>
+<body>
+  <!-- Header Section -->
+  <header class="bg-gray-800">
+    <div class="container mx-auto py-4 px-6 flex items-center justify-between">
+      <a href="{{ url_for('index') }}" class="text-white text-2xl font-bold">ChatGPT Plugin Store 🧩</a>
+      <nav class="space-x-4">
+        <a href="{{ url_for('index') }}" class="text-white">Homepage</a>
+        <a href="{{ url_for('plugin_list') }}" class="text-white">Plugins</a>
+        <a href="{{ url_for('contact') }}" class="text-white">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="hero bg-cover bg-center bg-gray-900 text-white py-20" style="background-image: url('https://source.unsplash.com/featured/1280x720/?developer')">
+    <div class="container mx-auto text-center">
+      <h1 class="text-4xl font-bold leading-tight mb-4">Discover Amazing GPT Plugins to use it on ChatGPT!</h1>
+      <a href="{{ url_for('plugin_list') }}" class="bg-blue-500 hover:bg-blue-600 text-white font-bold py-2 px-6 rounded-full uppercase">Discover Plugins</a>
+    </div>
+  </section>
+
+  <!-- Feature Section -->
+<section class="py-16">
+  <div class="container mx-auto">
+    <h2 class="text-3xl font-bold text-center mb-8">Features ✨</h2>
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+      <div class="bg-white rounded-lg shadow-md p-8">
+        <i class="fas fa-binoculars text-3xl text-blue-500 mb-4"></i>
+        <h3 class="text-xl font-semibold mb-2">Details of ChatGPT Plugins 🧩</h3>
+        <p class="text-gray-700">Access and investigate the fetched JSON output of available ChatGPT plugins for free.</p>
+        <a href="https://openai.com/blog/chatgpt-plugins" class="text-blue-500 font-bold mt-4 hover:text-blue-600">Learn More</a>
+      </div>
+      <div class="bg-white rounded-lg shadow-md p-8">
+        <i class="fas fa-shopping-cart text-3xl text-blue-500 mb-4"></i>
+        <h3 class="text-xl font-semibold mb-2">Completely FREE! 🆓</h3>
+        <p class="text-gray-700">Access 427 different and working ChatGPT plugins to directly use in your ChatGPT Plus account!</p>
+      </div>
+      <div class="bg-white rounded-lg shadow-md p-8">
+        <i class="fas fa-code text-3xl text-blue-500 mb-4"></i>
+        <h3 class="text-xl font-semibold mb-2">Open Source Project ⭐</h3>
+        <p class="text-gray-700">All working plugin list and even this web-page is open-sourced on GitHub.</p>
+        <a href="https://github.com/tolgakurtuluss/plugin" class="text-blue-500 font-bold mt-4 hover:text-blue-600">Fork and contribute on Github!
+          <i class="fas fa-code-branch" aria-hidden="true"></i>
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+
+  <!-- FAQ Section -->
+<section class="py-16">
+  <div class="container mx-auto">
+    <h2 class="text-3xl font-bold text-center mb-8">Frequently Asked Questions ❓</h2>
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+      <div>
+        <h3 class="text-xl font-semibold mb-2">What are ChatGPT Plugins? 🧩</h3>
+        <p class="text-gray-700">ChatGPT Plugins are third-party add-ons that allow ChatGPT to perform further functions beyond the basic operations and tasks that the platform is equipped to handle. These plugins are designed to be used with ChatGPT and they provide additional functionalities to the language model.</p>
+      </div>
+      <div>
+        <h3 class="text-xl font-semibold mb-2">How can I enable plugins into ChatGPT? ⚙️</h3>
+        <p class="text-gray-700">To enable third-party plugins in ChatGPT, navigate to <a href="https://chat.openai.com/" target="_blank" rel="noopener noreferrer">https://chat.openai.com/</a> and login. Then, by clicking on the left bottom three dots and select “Settings”. In the settings menu, locate the “Beta Features” option and turn on “Web browsing” and “Plugin” features.</p>
+      </div>        
+      <div>
+        <h3 class="text-xl font-semibold mb-2">Is there any documentation for ChatGPT Plugins? 📚</h3>
+        <p class="text-gray-700">Of course! You can access the official documentation on <a href="https://platform.openai.com/docs/plugins/introduction" target="_blank" rel="noopener noreferrer">https://platform.openai.com/docs/plugins/introduction</a></p>
+      </div>        
+      <div>
+        <h3 class="text-xl font-semibold mb-2">What are the policies for using plugins on ChatGPT? 📜</h3>
+        <p class="text-gray-700">All usage policies are detailed on the official OpenAI website on <a href="https://openai.com/policies/usage-policies#plugin-policies" target="_blank" rel="noopener noreferrer">https://openai.com/policies/usage-policies#plugin-policies</a></p>
+      </div>        
+    </div>
+  </div>
+</section>
+
+  <!-- Footer Section -->
+  <footer class="bg-gray-800 text-white py-10">
+    <div class="container mx-auto text-center">
+      <p>&copy; 2023 ChatGPT Plugin Store. All rights belong to the open-source community!</p>
+      <p>Made with ❤️</p>
+    </div>
+  </footer>
+
+</body>
+</html>

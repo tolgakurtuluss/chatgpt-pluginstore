@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact - ChatGPT Plugin Store</title>
+  <!-- Tailwind CSS CDN -->
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.1.2/dist/tailwind.min.css" rel="stylesheet">
+  <!-- Fontawesome CDN -->
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet">
+  <!-- Additional CSS file -->
+  <link href="styles.css" rel="stylesheet">
+  <!-- Additional JavaScript file -->
+  <script src="script.js" defer></script>
+</head>
+<body>
+    <!-- Header Section -->
+    <header class="bg-gray-800">
+      <div class="container mx-auto py-4 px-6 flex items-center justify-between">
+        <a href="{{ url_for('index') }}" class="text-white text-2xl font-bold">ChatGPT Plugin Store 🧩</a>
+        <nav class="space-x-4">
+          <a href="{{ url_for('index') }}" class="text-white">Homepage</a>
+          <a href="{{ url_for('plugin_list') }}" class="text-white">Plugins</a>
+          <a href="{{ url_for('contact') }}" class="text-white">Contact</a>
+        </nav>
+      </div>
+    </header>
+  
+    <!-- Contact Section -->
+    <section class="py-16 bg-gray-100">
+      <div class="container mx-auto text-center">
+  
+        <!-- Project Summary -->
+        <div class="my-11">
+          <h3 class="text-3xl font-bold mb-7">Project Summary</h3>
+          <p class="text-gray-700">
+            ChatGPT Plugin Store is a dynamic platform that offers an array of third-party add-ons, known as ChatGPT Plugins 🧩, designed to enhance the functionality of ChatGPT. With a user-friendly interface, the store allows you to explore, access, and integrate these plugins seamlessly into your ChatGPT Plus account. 🚀 The platform provides a collection of over 400 working ChatGPT plugins, each equipped with diverse features that empower users to extend the capabilities of the ChatGPT model.
+          </p>
+        </div>
+  
+        <!-- GitHub Details -->
+        <div class="my-13">
+            <h2 class="text-3xl font-bold mb-7">ChatGPT Plugin Store on Github 🚀</h2>
+            <p class="text-gray-700">Explore the source code and contribute to the development of this project on GitHub. Don't forget to ⭐️ star this repo!</p>
+            <a href="https://github.com/tolgakurtuluss/chatgpt-pluginstore" class="text-blue-500 hover:text-blue-600">
+                <img src="https://github.githubassets.com/images/modules/logos_page/GitHub-Logo.png" alt="GitHub Logo" class="h-30 w-40 inline-block align-middle">
+                <span class="align-middle"></span>
+              </a>              
+        </div>
+      </div>
+    </section>
+  
+    <!-- Developer Section -->
+      <div class="container mx-auto flex justify-center items-center">
+        <div class="text-center">
+          <h2 class="text-3xl font-bold mb-7">Developed by </h2>
+          <div class="grid grid-cols-1 md:grid-cols-1 gap-8">
+            <div class="flex flex-col items-center">
+              <img class="h-32 w-32 object-cover rounded-full mb-4" src="https://avatars.githubusercontent.com/u/22731161?v=4">
+              <h3 class="text-2xl font-semibold">Tolga Kurtulus</h3>
+              <p class="text-gray-500">Developer & Data Analyst</p>
+              <br>
+              <p>Want to contact with the developer?</p>
+              <ul class="flex justify-center space-x-4 mb-10">
+                <li><a href="https://github.com/tolgakurtuluss/"><i class="fab fa-github"></i></a></li>
+                <li><a href="mailto:tolgakurtulus95@gmail.com"><i class="fab fa-google"></i></a></li>
+                <li><a href="https://www.linkedin.com/in/tolgakurtulus/"><i class="fab fa-linkedin"></i></a></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+  
+    <!-- Footer Section -->
+    <footer class="bg-gray-800 text-white py-10">
+      <div class="container mx-auto text-center">
+        <p>&copy; 2023 ChatGPT Plugin Store. All rights belong to the open-source community!</p>
+        <p>Made with ❤️</p>
+      </div>
+    </footer>
+  </body> 
+</html>
